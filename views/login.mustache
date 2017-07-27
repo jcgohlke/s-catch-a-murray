@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="login" method="POST">
+        <div class="header">
+          <span class="title">Please find Bill Murray to log in</span>
+        </div>
+        <div class="captcha">
+          {{ #random }}
+            <img src="{{.}}">
+            <div class="choices">
+              <input type="radio" name="guess" id="yes" value="billmurray" />
+              <label for="yes">That's Bill Murray</label>
+              <input type="radio" name="guess" id="no" value="notbillmurray" />
+              <label for="no">That's NOT Bill Murray</label>
+              <input type="hidden" name="displayedImg" value="{{.}}" />
+            </div>
+          {{ /random }}
+          <button>Log me in.</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
